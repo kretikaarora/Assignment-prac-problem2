@@ -19,9 +19,17 @@ namespace lines
             double X = X1 - X2;
             double Y = Y1 - Y2;
             double multiplication1 = X * X + Y * Y;
+
+            double lengthOfLine1 = Math.Round(Math.Sqrt(multiplication1), 3, MidpointRounding.AwayFromZero);
+
+            //uc2
+
+            Console.WriteLine("The lenth of line segment 1: {0}", lengthOfLine1) ;
+
             double LengthOfLine1 = Math.Round(Math.Sqrt(multiplication1), 3, MidpointRounding.AwayFromZero);
 
             Console.WriteLine("The lenth of line segment: {0}", LengthOfLine1);
+
 
             Console.WriteLine("enter x and y coordinates of point 1 (line 2) ");
             double X3 = Convert.ToDouble(Console.ReadLine());
@@ -36,7 +44,14 @@ namespace lines
             double multiplication2 = T * T + Z * Z;
             double lengthOfLine2 = Math.Round(Math.Sqrt(multiplication2), 3, MidpointRounding.AwayFromZero);
 
+            Console.WriteLine("The lenth of line segment 2: {0}", lengthOfLine2);
+
+
+            if (lengthOfLine1==lengthOfLine2)
+
+
             if (LengthOfLine1==lengthOfLine2)
+
             {
                 Console.WriteLine("Lines have equal lenth");
 
@@ -45,6 +60,26 @@ namespace lines
             {
                 Console.WriteLine("lines are not equal");
             }
+
+
+
+            //uc3
+
+            double comparator = lengthOfLine1.CompareTo(lengthOfLine2);
+            if (comparator==1)
+            {
+                Console.WriteLine("line 1 is greater in length");
+            }
+            else if (comparator== -1)
+            {
+                Console.WriteLine("line 2 is greater");
+
+            }
+            else
+            {
+                Console.WriteLine("both are equal");
+            }
+    
 
 
         }
